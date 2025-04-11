@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- تعریف نسخه و کدگذاری فایل XML -->
+<!-- لایه نمایشگرهای ماشین حساب -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="wrap_content">
+    <!-- تعریف فضای نام اندروید -->
+    <!-- تنظیم جهت چیدمان المان‌ها به صورت عمودی -->
+    <!-- تنظیم عرض لایه به اندازه عرض صفحه -->
+    <!-- تنظیم رنگ پس‌زمینه به سیاه -->
+    <!-- تنظیم ارتفاع لایه بر اساس محتوای آن -->
+
+    <!-- نمایشگر ورودی: نمایش اعداد و عملگرها -->
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="end"
+        android:fontFamily="@font/g_light"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:padding="10dp"
+        android:text=""/>
+    <!-- تعریف نمایشگر ورودی -->
+    <!-- تعریف شناسه منحصر به فرد برای نمایشگر ورودی -->
+    <!-- تنظیم عرض نمایشگر به اندازه عرض صفحه -->
+    <!-- تنظیم ارتفاع نمایشگر بر اساس محتوای آن -->
+    <!-- تنظیم اندازه متن به 30 واحد مستقل از مقیاس -->
+    <!-- تنظیم چیدمان متن به سمت راست -->
+    <!-- تنظیم فونت متن به فونت سبک -->
+    <!-- تنظیم رنگ متن به سفید -->
+    <!-- تنظیم رنگ پس‌زمینه به سیاه -->
+    <!-- تنظیم فاصله داخلی به 10 واحد مستقل از چگالی -->
+    <!-- مقدار اولیه متن خالی -->
+
+    <!-- نمایشگر خروجی: نمایش نتیجه -->
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:gravity="end"
+        android:fontFamily="@font/g_light"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:padding="10dp"
+        android:text=""/>
+    <!-- تعریف نمایشگر خروجی -->
+    <!-- تعریف شناسه منحصر به فرد برای نمایشگر خروجی -->
+    <!-- تنظیم عرض نمایشگر به اندازه عرض صفحه -->
+    <!-- تنظیم ارتفاع نمایشگر بر اساس محتوای آن -->
+    <!-- تنظیم اندازه متن به 60 واحد مستقل از مقیاس -->
+    <!-- تنظیم چیدمان متن به سمت راست -->
+    <!-- تنظیم فونت متن به فونت سبک -->
+    <!-- تنظیم رنگ متن به سفید -->
+    <!-- تنظیم رنگ پس‌زمینه به سیاه -->
+    <!-- تنظیم فاصله داخلی به 10 واحد مستقل از چگالی -->
+    <!-- مقدار اولیه متن خالی -->
+
+</LinearLayout>
