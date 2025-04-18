@@ -22,13 +22,12 @@ public class MainActivity extends AppCompatActivity {
     // تعریف دکمه‌های عملگرها
     private Button btnPercent, btnPlus, btnMinus, btnMultiply, btnDivision;
     // تعریف دکمه‌های ویژه
-    private Button btnEqual, btnClear, btnDot, btnBracket;
+    private Button btnEqual, btnClear, btnDot;
     // تعریف نمایشگرهای متن
     private TextView tvInput, tvOutput;
     // متغیر برای ذخیره عبارت ریاضی
     private String process;
-    // متغیر برای بررسی وضعیت پرانتزها
-    private boolean checkBracket = false;
+
 
     /**
      * متد onCreate اولین متدی است که هنگام اجرای برنامه فراخوانی می‌شود
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         btnClear = findViewById(R.id.btnClear);
         btnDot = findViewById(R.id.btnDot);
         btnPercent = findViewById(R.id.btnPercent);
-        btnBracket = findViewById(R.id.btnBracket);
+
 
         // اتصال نمایشگرهای متن
         tvInput = findViewById(R.id.tvInput);
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(v -> {
             tvInput.setText("");
             tvOutput.setText("");
-            checkBracket = false;
         });
 
         // تنظیم شنونده مشترک برای تمام دکمه‌های اعداد
@@ -112,18 +110,6 @@ public class MainActivity extends AppCompatActivity {
         btnDot.setOnClickListener(v -> appendOperator("."));
         btnPercent.setOnClickListener(v -> appendOperator("%"));
 
-        // تنظیم شنونده برای دکمه پرانتز
-        btnBracket.setOnClickListener(v -> {
-            process = tvInput.getText().toString();
-            if (checkBracket) {
-                tvInput.setText(process + ")");
-                checkBracket = false;
-            } else {
-                tvInput.setText(process + "(");
-                checkBracket = true;
-            }
-        });
-
         // تنظیم شنونده برای دکمه مساوی
         btnEqual.setOnClickListener(v -> calculateResult());
     }
@@ -149,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private boolean isValidOperatorPlacement(String currentInput, String operator) {
         if (currentInput.isEmpty()) {
-            return operator.equals("-") || operator.equals("(");
+            return operator.equals("-");
         }
         
         char lastChar = currentInput.charAt(currentInput.length() - 1);
@@ -181,11 +167,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // بررسی پرانتزهای بسته نشده
-        if (checkBracket) {
-            Toast.makeText(this, "پرانتز بسته نشده است", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         // بررسی عملگرهای نامعتبر پشت سر هم
         if (process.matches(".*[+\\-×÷]{2,}.*")) {
